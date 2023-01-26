@@ -4,6 +4,7 @@
 
 int ingresso(dia_da_semana)
 {
+
     if (dia_da_semana == "sexta" || dia_da_semana == "sabado" || dia_da_semana == "domingo")
     {
         int ingresso = 20;
@@ -13,6 +14,7 @@ int ingresso(dia_da_semana)
         int ingresso = 10;
     }
     return ingresso;
+
 }
 
 
@@ -35,14 +37,8 @@ int main(void)
     gets(dia_da_semana);
     if (dia_da_semana != "segunda" || "terca" || "quarta" || "quinta" || "sexta" || "sabado" || "domingo")
     {
-        /* code */
+        
     }
-    
-
-    
-
-
-
 
     getch();
     return 0;
