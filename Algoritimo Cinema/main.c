@@ -2,26 +2,10 @@
 #include <string.h>
 #include <conio.h>
 
-int ingresso(dia_da_semana)
-{
-
-    if (dia_da_semana == "sexta" || dia_da_semana == "sabado" || dia_da_semana == "domingo")
-    {
-        int ingresso = 20;
-    }
-    else if (dia_da_semana == "segunda" || dia_da_semana == "terca" || dia_da_semana == "quarta" || dia_da_semana == "quinta")
-    {
-        int ingresso = 10;
-    }
-    return ingresso;
-
-}
-
-
 int main(void)
 {
-    char dia_da_semana[56];
-    int id, quantidade_ingressos;
+
+    int id, quantidade_ingressos, dia_da_semana;
 
     printf("Digite o id: \n");
     scanf("%d", &id);
@@ -33,13 +17,8 @@ int main(void)
         printf("A quantidade maxima de ingressos por id e´ de 3 ingressos: \n");
         scanf("%d", &quantidade_ingressos);
     }
-    printf("Digite o dia da semana: \n");
-    gets(dia_da_semana);
-    if (dia_da_semana != "segunda" || "terca" || "quarta" || "quinta" || "sexta" || "sabado" || "domingo")
-    {
-        
-    }
+    printf("Digite o dia da semana,\n1 - para domingo: \n2 - para segunda: \n3 - para terça: \n4 - para quarta: \n5 - para quinta: \n6 - para sexta: \n7 - para sabado: \n");
+    scanf("%d", &dia_da_semana);
 
-    getch();
     return 0;
 }
