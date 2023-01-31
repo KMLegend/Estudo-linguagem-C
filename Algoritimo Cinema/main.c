@@ -154,6 +154,7 @@ int assentos_livres ()
 	return 0;
 }
 
+//Funções que mostram os filmes disponiveis
 int filmes_t()
 {
 	int quant_bilhetes, horario_sessao=0, forma_pagamento;
@@ -461,6 +462,8 @@ int filmes_a()
 	return 0;
 }
 
+
+//Principal
 int main ()
 {
 	/*
@@ -493,13 +496,13 @@ int main ()
 		case 0:
 			break;
 		case 1:
-			filmes_t();
+			filmes_t(); //Chamei a Função do filme transformrs
 			break;
 		case 2:
-			filmes_v();
+			filmes_v(); //Chamei a Função do filme Velozes e Furiosos
 			break;
 		case 3:
-			filmes_a();		
+			filmes_a();	//Chamei a Função do filme Atividade Paranormal
 			break;
 		}
 	}
