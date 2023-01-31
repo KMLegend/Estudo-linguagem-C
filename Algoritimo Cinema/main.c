@@ -2,15 +2,13 @@
 #include <stdio.h>
 #include <math.h>
 
-
-
-int main (void)
-{
+int assentos_livres ()
+{	
 	int Caso_cadeira, i, j, lin, col, condi, n, t, x, p;
 	int poltrona[10] [15];
 	char ascii = 79;
 	char asciii = 158;
-	
+
 	for(i=0 ; i<10; i++)
 	{
 		for(j=0 ; j<15 ; j++)
@@ -151,6 +149,325 @@ int main (void)
 			}
 		
 	}while(Caso_cadeira!=0);
-	system("pause");
-	return(0);
+	return 0;
 }
+
+int main ()
+{
+	/*
+		quant_blihetes= refere a quantidade de bilhetes que o cliente vai comprar
+		caso_filmes= refere ao CASE para escolha dos filmes
+		horario_sessao= refere a esolha do horario pelo cliente
+		FP= refere a forma de pagamento que o cliente escolheu	 
+	*/
+	int quant_bilhetes, caso_filmes, horario_sessao=0, FP;
+	
+
+		printf("\t===============================================\n");
+		printf("\t===============================================\n");
+		printf("\t========== CINE PARA TODOS ====================\n");
+		printf("\t===============================================\n");
+		printf("\t===============================================\n\n");
+		printf("\t ESCOLHA UMA DAS OPCOES: \n");
+		printf("\t-----------------------------------------------\n");
+		printf("\t| FILMES EM CARTAZ |\n\n");
+		printf("\t| [1] Transformers |\n");
+		printf("\t| [2] Velozes e Furiosos |\n");
+		printf("\t| [3] Atividade Paranormal |\n");
+		printf("\t----------------------------------------------\n");
+		printf("Zero para sair:\n\n ");
+		scanf("%d",&caso_filmes);
+	
+	switch (caso_filmes)
+	{
+			default:		
+				printf("Opcao invalida.\n");
+			case 1:
+				
+				printf("\t--------------------------------------\n");
+				printf("\t Cine 1: Transformers\n");
+				printf("\t Sessao [1]: 13:30 \n");
+				printf("\t Sessao [2]: 15:30 \n");
+				printf("\t Sessao [3]: 17:30 \n");
+				printf("\tComprar bilhete para qual sessao ? \n\n");
+				printf("\t--------------------------------------\n");
+				scanf("%d",&horario_sessao);
+					if (horario_sessao==1) 
+					{
+						printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
+						scanf("%d",&quant_bilhetes);
+						if (quant_bilhetes<=20) 
+						{
+							
+							printf("\t---------------------------------------\n");	
+							printf("\t FORMAS DE PAGAMENTO : : : \n\n");
+							printf("\t [1]Inteira: 8,00 R$ \n");
+							printf("\t [2]Meia: 4,00 R$ \n");
+							scanf("%d",&FP);
+							printf("\t---------------------------------------\n");
+							if (FP==1)
+							{
+								printf("\tForma de Pagamento :: INTEIRA \n\n");
+							}
+							else
+							{
+								printf("\tForma de Pagamento :: MEIA ");
+							}
+							printf("\tSessao escolhida 1: 13:30\n\n");
+							printf("\tSeu bilhete foi adiquirido com sucesso. \n");
+							printf("\tDivirta-se. Um bom filme pra voce.\n ");
+						}
+						else 
+						{
+							printf("\tNao há mais bilhetes\n ");
+						}
+					}
+				if (horario_sessao==2)
+				{
+					printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
+					scanf("%d",&quant_bilhetes);
+					if (quant_bilhetes<=20) 
+					{
+						printf("\t---------------------------------------\n");	
+						printf("\t FORMAS DE PAGAMENTO : : : \n\n");
+						printf("\t [1]Inteira: 8,00 R$ \n");
+						printf("\t [2]Meia: 4,00 R$ \n");
+						scanf("%d",&FP);
+						printf("\t---------------------------------------\n");
+						if (FP==1) 
+						{
+							printf("\tForma de Pagamento :: INTEIRA \n\n");
+						}
+						else 
+						{
+							printf("\tForma de Pagamento :: MEIA \n\n");
+						}
+						printf("\tSeu bilhete foi adiquirido com sucesso. \n");
+						printf("\tSessao escolhida 2: 15:30\n");
+						printf("\tDivirta-se. Um bom filme pra voce.\n\n ");
+					}
+					else 
+					{
+						printf("\tNao há mais bilhetes\n ");
+					}
+				}
+				if (horario_sessao==3) 
+				{
+					printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
+					scanf("%i",&quant_bilhetes);
+					if (quant_bilhetes<=20) 
+					{
+						printf("\t---------------------------------------\n");	
+						printf("\t FORMAS DE PAGAMENTO : : : \n\n");
+						printf("\t [1]Inteira: 8,00 R$ \n");
+						printf("\t [2]Meia: 4,00 R$ \n");
+						scanf("%i",&FP);
+						printf("\t---------------------------------------\n");
+						if (FP==1) 
+						{
+							printf("\tForma de Pagamento :: INTEIRA \n\n");
+						}
+						else 
+						{
+							printf("\tForma de Pagamento :: MEIA \n\n");
+						}
+						printf("\tSeu bilhete foi adiquirido com sucesso. \n");
+						printf("\tSessao escolhida 3: 17:30\n");
+						printf("\tDivirta-se. Um bom filme pra voce.\n\n ");
+					}
+					else 
+					{
+						printf("\tNao há mais bilhetes\n ");
+					}
+				}
+			break;
+	case 2:
+		printf("\t--------------------------------------\n");
+		printf("\t Velozes e Furiosos \n");
+		printf("\t Sessao 1: 13:45 \n");
+		printf("\t Sessao 2: 16:15 \n");
+		printf("\t Sessao 3: 18:45 \n");
+		printf("\tComprar bilhete para qual sessao ? \n\n");
+		printf("\t--------------------------------------\n");
+		scanf("%d",&horario_sessao);
+		if (horario_sessao==1) 
+		{
+			printf ("\tInforme a quantidade de bilhetes que deseja comprar:\n");
+			scanf("%d",&quant_bilhetes);
+			if (quant_bilhetes<=20) 
+			{
+				printf("\t---------------------------------------\n");				
+				printf("\t FORMAS DE PAGAMENTO : : : \n\n");
+				printf("\t [1]Inteira: 8,00 R$ \n");
+				printf("\t [2]Meia: 4,00 R$ \n");
+				scanf("%d",&FP);
+				printf("\t---------------------------------------\n");
+				if (FP==1) 
+				{
+					printf("\tForma de Pagamento :: INTEIRA \n\n");
+				}
+				else 
+				{
+					printf("\tForma de Pagamento :: MEIA \n\n");
+				}
+				printf("\tSeu bilhete foi adiquirido com sucesso.\n");
+				printf("\tSessao escolhida 1: 13:45\n");
+				printf("\tDivirta-se. Um bom filme pra voce.\n\n ");
+			}
+			else 
+			{
+				printf("\tNao há mais bilhetes\n ");
+			}
+		}
+		if (horario_sessao==2)
+		{
+			printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
+			scanf("%d",&quant_bilhetes);
+			if (quant_bilhetes<=20) 
+			{			
+				printf("\t---------------------------------------\n");	
+				printf("\t FORMAS DE PAGAMENTO : : : \n\n");
+				printf("\t [1]Inteira: 8,00 R$ \n");
+				printf("\t [2]Meia: 4,00 R$ \n");
+				scanf("%d",&FP);
+				printf("\t---------------------------------------\n");
+				printf("\tSeu bilhete foi adiquirido com sucesso. \n");
+				printf("\tSessao escolhida 2: 16:15\n");
+				printf("\tDivirta-se. Um bom filme pra voce.\n\n ");
+			}
+			else 
+			{
+				printf("\tNao há mais bilhetes\n ");
+			}
+		}
+		if (horario_sessao==3)
+		{
+			printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
+			scanf("%d",&quant_bilhetes);
+			if (quant_bilhetes<=20) 
+			{
+				printf("\t---------------------------------------\n");	
+				printf("\t FORMAS DE PAGAMENTO : : : \n\n");
+				printf("\t [1]Inteira: 8,00 R$ \n");
+				printf("\t [2]Meia: 4,00 R$ \n");
+				scanf("%d",&FP);
+				printf("\t---------------------------------------\n");
+				if (FP==1) 
+				{
+					printf("\tForma de Pagamento :: INTEIRA \n\n");
+				}
+				else 
+				{
+					printf("\tForma de Pagamento :: MEIA \n\n");
+				}
+				printf("\tSeu bilhete foi adiquirido com sucesso. \n");
+				printf("\tSessao escolhida 3: 18:45\n");
+				printf("\tDivirta-se. Um bom filme pra voce.\n\n ");
+			}
+			else 
+			{
+				printf("\tNao há mais bilhetes\n ");
+			}
+		}
+		break;
+	case 3:
+		printf("\t-----------------------------------------------\n");
+		printf("\t Cine 3: Atividade Paranormal \n");
+		printf("\t Sessao 1: 13:30 \n");
+		printf("\t Sessao 2: 15:30 \n");
+		printf("\t Sessao 3: 17:30 \n");
+		printf("\tComprar bilhete para qual sessao ? \n\n");
+		printf("\t-----------------------------------------------\n");
+		scanf("%d",&horario_sessao);
+		if (horario_sessao==1) 
+		{
+			printf ("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
+			scanf("%d",&quant_bilhetes);
+			if (quant_bilhetes<=20) 
+			{
+				printf("\t---------------------------------------\n");	
+				printf("\t FORMAS DE PAGAMENTO : : : \n\n");
+				printf("\t [1]Inteira: 8,00 R$ \n");
+				printf("\t [2]Meia: 4,00 R$ \n");
+				scanf("%d",&FP);
+				printf("\t---------------------------------------\n");
+				if (FP==1) 
+				{
+					printf("\tForma de Pagamento :: INTEIRA \n\n");
+				}
+				else 
+				{
+					printf("\tForma de Pagamento :: MEIA \n\n");
+				}
+				printf("\tSeu bilhete foi adiquirido com sucesso.\n");
+				printf("\tSessao escolhida 1: 13:30\n");
+				printf("\tDivirta-se. Um bom filme pra voce.\n\n ");
+			}
+			else 
+			{	
+				printf("\tNao há mais bilhetes\n ");
+			}
+		}		
+		if (horario_sessao==2)
+		{
+			printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
+			scanf("%d",&quant_bilhetes);
+			if (quant_bilhetes<=20) 
+			{
+				printf("\t---------------------------------------\n");
+				printf("\t FORMAS DE PAGAMENTO : : : \n\n");				
+				printf("\t [1]Inteira: 8,00 R$ \n");				
+				printf("\t [2]Meia: 4,00 R$ \n");				
+				scanf("%d",&FP);				
+				printf("\t---------------------------------------\n");				
+				if (FP==1) 
+				{				
+					printf("\tForma de Pagamento :: INTEIRA \n\n");				
+				}				
+				else 
+				{				
+					printf("\tForma de Pagamento :: MEIA \n\n");				
+				}				
+				printf("\tSeu bilhete foi adiquirido com sucesso. \n");				
+				printf("\tSessao escolhida 2: 15:30\n");				
+				printf("\tDivirta-se. Um bom filme pra voce.\n\n ");			
+			}			
+			else 
+			{			
+				printf("\tNao há mais bilhetes\n ");			
+			}		
+		}		
+		if (horario_sessao==3)
+		{		
+			printf ("\tInforme a quantidade de bilhetes que deseja comprar:\n");			
+			scanf("%d",&quant_bilhetes);			
+			if (quant_bilhetes<=20) 
+			{			
+				printf("\t---------------------------------------\n");				
+				printf("\t FORMAS DE PAGAMENTO : : : \n\n");				
+				printf("\t [1]Inteira: 8,00 R$ \n");
+				printf("\t [2]Meia: 4,00 R$ \n");
+				scanf("%d",&FP);
+				printf("\t---------------------------------------\n");
+				if (FP==1) 
+				{
+					printf("\tForma de Pagamento :: INTEIRA \n\n");
+				}
+				else 
+				{
+					printf("\tForma de Pagamento :: MEIA \n\n");
+				}
+				printf("\tSeu bilhete foi adiquirido com sucesso.\n");
+				printf("\tSessao escolhida 3: 17:30\n");
+				printf("\tDivirta-se. Um bom filme pra voce.\n\n ");
+			}
+			else 
+			{
+				printf("\tNao há mais bilhetes\n ");
+			}
+		}
+		break;
+	}
+	system ("pause");
+}
+
