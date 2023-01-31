@@ -11,6 +11,7 @@ int assentos_livres ()
 	char ascii = 79;
 	char asciii = 158;
 
+	//zera a matriz
 	for(i=0 ; i<10; i++)
 	{
 		for(j=0 ; j<15 ; j++)
@@ -20,8 +21,8 @@ int assentos_livres ()
 	}
 
     n=0;
+	//mostra a matriz
     printf("\tC\n\tO\n\tL\n\tU\n\tN\n\tA\n");
-    
     printf("LINHA");
     printf("   0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 \n");
             for(i=0 ; i<10; i++)
@@ -170,9 +171,10 @@ int filmes_t()
 		{
 			printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
 			scanf("%d",&quant_bilhetes);
-			assentos_livres();
+			
 			if (quant_bilhetes<=3) 
 			{
+				assentos_livres();
 
 				printf("\t---------------------------------------\n");	
 				printf("\t FORMAS DE PAGAMENTO : : : \n\n");
@@ -194,16 +196,17 @@ int filmes_t()
 			}
 			else 
 			{
-				printf("\tO limite de ingressos por pessoa e´ de 3\n ");
+				printf("\tO limite de ingressos por pessoa e de 3\n ");
 			}
 		}
 	if (horario_sessao==2)
 	{
 		printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
 		scanf("%d",&quant_bilhetes);
-		assentos_livres();
+		
 		if (quant_bilhetes<=3) 
 		{
+			assentos_livres();
 			printf("\t---------------------------------------\n");	
 			printf("\t FORMAS DE PAGAMENTO : : : \n\n");
 			printf("\t [1]Inteira: 8,00 R$ \n");
@@ -224,20 +227,22 @@ int filmes_t()
 		}
 		else 
 		{
-			printf("\tO limite de ingressos por pessoa e´ de 3\n ");
+			printf("\tO limite de ingressos por pessoa e de 3\n ");
 		}
 	}
 	if (horario_sessao==3) 
 	{
 		printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
-		scanf("%i",&quant_bilhetes);
+		scanf("%d",&quant_bilhetes);
+		
 		if (quant_bilhetes<=3) 
 		{
+			assentos_livres();
 			printf("\t---------------------------------------\n");	
 			printf("\t FORMAS DE PAGAMENTO : : : \n\n");
 			printf("\t [1]Inteira: 8,00 R$ \n");
 			printf("\t [2]Meia: 4,00 R$ \n");
-			scanf("%i",&forma_pagamento);
+			scanf("%d",&forma_pagamento);
 			printf("\t---------------------------------------\n");
 			if (forma_pagamento==1) 
 			{
@@ -253,7 +258,7 @@ int filmes_t()
 		}
 		else 
 		{
-			printf("\tO limite de ingressos por pessoa e´ de 3\n ");
+			printf("\tO limite de ingressos por pessoa e de 3\n ");
 		}
 	}
 	return 0;
@@ -274,9 +279,10 @@ int filmes_v()
 	{
 		printf ("\tInforme a quantidade de bilhetes que deseja comprar:\n");
 		scanf("%d",&quant_bilhetes);
-		assentos_livres();
+		
 		if (quant_bilhetes<=3) 
 		{
+			assentos_livres();
 			printf("\t---------------------------------------\n");
 			printf("\t FORMAS DE PAGAMENTO : : : \n\n");
 			printf("\t [1]Inteira: 8,00 R$ \n");
@@ -297,16 +303,17 @@ int filmes_v()
 		}
 		else 
 		{
-			printf("\tO limite de ingressos por pessoa e´ de 3\n ");
+			printf("\tO limite de ingressos por pessoa e de 3\n ");
 		}
 	}
 	if (horario_sessao==2)
 	{
 		printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
 		scanf("%d",&quant_bilhetes);
-		assentos_livres();
+		
 		if (quant_bilhetes<=3) 
 		{	
+			assentos_livres();
 			printf("\t---------------------------------------\n");	
 			printf("\t FORMAS DE PAGAMENTO : : : \n\n");
 			printf("\t [1]Inteira: 8,00 R$ \n");
@@ -319,16 +326,17 @@ int filmes_v()
 		}
 		else 
 		{
-			printf("\tO limite de ingressos por pessoa e´ de 3\n ");
+			printf("\tO limite de ingressos por pessoa e de 3\n ");
 		}
 	}
 	if (horario_sessao==3)
 	{
 		printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
 		scanf("%d",&quant_bilhetes);
-		assentos_livres();
+		
 		if (quant_bilhetes<=3) 
 		{
+			assentos_livres();
 			printf("\t---------------------------------------\n");	
 			printf("\t FORMAS DE PAGAMENTO : : : \n\n");
 			printf("\t [1]Inteira: 8,00 R$ \n");
@@ -351,7 +359,7 @@ int filmes_v()
 		}
 		else 
 		{
-			printf("\tO limite de ingressos por pessoa e´ de 3\n ");
+			printf("\tO limite de ingressos por pessoa e de 3\n ");
 		}
 	}
 	return 0;
@@ -373,9 +381,10 @@ int filmes_a()
 	{
 		printf ("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
 		scanf("%d",&quant_bilhetes);
-		assentos_livres();
+		
 		if (quant_bilhetes<=3) 
 		{
+			assentos_livres();
 			printf("\t---------------------------------------\n");	
 			printf("\t FORMAS DE PAGAMENTO : : : \n\n");
 			printf("\t [1]Inteira: 8,00 R$ \n");
@@ -396,16 +405,17 @@ int filmes_a()
 		}
 		else 
 		{	
-			printf("\tO limite de ingressos por pessoa e´ de 3\n ");
+			printf("\tO limite de ingressos por pessoa e de 3\n ");
 		}
 	}		
 	if (horario_sessao==2)
 	{
 		printf("\tInforme a quantidade de bilhetes que deseja comprar:\n");	
 		scanf("%d",&quant_bilhetes);
-		assentos_livres();
+		
 		if (quant_bilhetes<=3) 
 		{
+			assentos_livres();
 			printf("\t---------------------------------------\n");
 			printf("\t FORMAS DE PAGAMENTO : : : \n\n");				
 			printf("\t [1]Inteira: 8,00 R$ \n");				
@@ -426,16 +436,17 @@ int filmes_a()
 		}			
 		else 
 		{			
-		printf("\tO limite de ingressos por pessoa e´ de 3\n ");			
+		printf("\tO limite de ingressos por pessoa e de 3\n ");			
 		}		
 	}		
 	if (horario_sessao==3)
 		{		
 		printf ("\tInforme a quantidade de bilhetes que deseja comprar:\n");			
 		scanf("%d",&quant_bilhetes);
-		assentos_livres();			
+					
 		if (quant_bilhetes<=3) 
 		{			
+			assentos_livres();
 			printf("\t---------------------------------------\n");				
 			printf("\t FORMAS DE PAGAMENTO : : : \n\n");				
 			printf("\t [1]Inteira: 8,00 R$ \n");
@@ -456,7 +467,7 @@ int filmes_a()
 		}
 		else 
 		{
-			printf("\tO limite de ingressos por pessoa e´ de 3\n ");
+			printf("\tO limite de ingressos por pessoa e de 3\n ");
 		}
 	}
 	return 0;
@@ -488,7 +499,8 @@ int main ()
 		printf("\t| [3] Atividade Paranormal |\n");
 		printf("\t----------------------------------------------\n");
 		printf("Zero para sair:\n\n ");
-		scanf("%d",&caso_filmes);	
+		scanf("%d",&caso_filmes);
+
 		switch (caso_filmes)
 		{
 		default:		
