@@ -48,6 +48,7 @@ Laboratorio inicia_laboratorio(int laboratorio)
 	return l;
 }
 
+//Função para mostrar os lugares disponiveis
 void visualiza_agendamentos(Laboratorio *lab, int laboratorio_escolhido)
 {
 	int i, j;
@@ -61,6 +62,7 @@ void visualiza_agendamentos(Laboratorio *lab, int laboratorio_escolhido)
 	}
 }
 
+//Função de agendar um Horario no laboratorio
 int agendar(Laboratorio *lab)
 {
 	// Escolha lab
@@ -131,11 +133,14 @@ int agendar(Laboratorio *lab)
 	return 1;
 }
 
+
+//Principal
 int main()
 {
+	//Variavel de decisão do Menu:
 	int opcao = 1;
 
-	// Gerenado a variavel do tipo agendamento, Variavel Pessoa.
+	// Gerando a variavel do tipo agendamento, Variavel Pessoa.
 	Laboratorio lab[6]; // os laboratorios com sua quantidades lab[6] = 1 ao 5 laboratorios.
 
 	lab[1] = inicia_laboratorio(1);
@@ -144,9 +149,6 @@ int main()
 	lab[4] = inicia_laboratorio(4);
 	lab[5] = inicia_laboratorio(5);
 
-
-
-
 	// Leitura dos dados:
 	do
 	{
@@ -154,7 +156,7 @@ int main()
 		printf("Digite sua matricula: ");
 		scanf("%d", &matricula);
 		Pessoa pessoa = inicia_pessoa(matricula);
-		
+
 		if (pessoa.reservas == 3)
 		{
 			printf()
@@ -174,41 +176,3 @@ int main()
 	system("pause");
 	return 0;
 }
-
-
-
-
-
-/*
-//-------------------------------------------------------------------------------------------------------Parte cancelamento------------------------------------------------------------------------------------------------//
-		if(reserva == 1)
-		{
-			printf("Qual reserva voce gostaria de retirar: \n");
-			printf("%d\n\n", pessoa.matricula);
-			printf("[1] - %d\n",pessoa.dia_semana);
-			printf(": ");
-			scanf("%d", cancelamento);
-			switch (cancelamento)
-			{
-			case 1:
-				printf("[1] - %d\n",pessoa.laboratorio);
-				printf("[2] - %d\n\n",pessoa.horario);
-				scanf("%d", cancelamento);
-				switch (cancelamento)
-				{
-				case 1:
-
-					break;
-
-				default:
-					break;
-				}
-				break;
-
-			default:
-				break;
-			}
-
-		}
-		//-------------------------------------------------------------------------------------------------------Parte cancelamento------------------------------------------------------------------------------------------------//
-*/
