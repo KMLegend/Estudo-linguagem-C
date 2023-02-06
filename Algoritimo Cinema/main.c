@@ -154,7 +154,7 @@ int main()
 		printf("Digite sua matricula: ");
 		scanf("%d", &matricula);
 		Pessoa pessoa = inicia_pessoa(matricula);
-
+		
 		if (pessoa.reservas == 3)
 		{
 			printf()
