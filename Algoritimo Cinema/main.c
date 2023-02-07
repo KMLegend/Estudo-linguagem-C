@@ -3,12 +3,6 @@
 #include <math.h>
 
 
-/*
-	return 0; --> deu errado
-	return 1; --> deu certo , cancela só 1 reserva
-	return 2; --> deu certo cancela tudo
-*/
-
 
 //Estrutura de Variaveis do tipo pessoa.
 typedef struct
@@ -72,11 +66,38 @@ void visualiza_agendamentos()
 		printf("Laboratorio invalido.");
 	}
 
-	for (i = 0; i < 6; i++)
+	printf("    ");
+	for ( i = 8; i < 23; i++)
 	{
-		for (j = 0; j < 25; j++)
+		printf("%02d:00 ",i);
+	}
+	printf("\n");
+	for (i = 0; i < 5; i++)
+	{
+		switch (i)
 		{
-			printf("%d ", lista_laboratorios[laboratorio_escolhido].horarios[i][j]);
+		case 0:
+			printf("SEG ");
+			break;
+		case 1:
+			printf("TER ");
+			break;
+		case 2:
+			printf("QUA ");
+			break;
+		case 3:
+			printf("QUI ");
+			break;
+		case 4:
+			printf("SEX ");
+			break;
+		default:
+			break;
+		}
+		for (j = 8; j < 23; j++)
+		{
+
+			printf("%5d ", lista_laboratorios[laboratorio_escolhido].horarios[i][j]);
 		}
 		printf("\n");
 	}
@@ -154,8 +175,17 @@ int agendar(int matricula)
 	return 1;
 }
 
+
+//Função de cancelamento um de Horario no laboratorio
 int cancelar(int matricula)
 {
+	
+/*
+	return 0; --> deu errado
+	return 1; --> deu certo , cancela só 1 reserva
+	return 2; --> deu certo cancela tudo
+*/
+
 	// Escolha lab
 	int laboratorio_escolhido;
 	printf("Digite qual o laboratorio: \n");
@@ -210,29 +240,29 @@ int cancelar(int matricula)
 		printf("O horario selecionado foi reservado por outra matricula, nao e possivel cancelar.");
 		return 0;
 	}
-	if (lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] == matricula)
+	
+	
+	if (quantidade_horas == 1)
 	{
-		if (quantidade_horas == 1)
+		lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
+		if (lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido + 1] == matricula)
 		{
-			lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
-			if (lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido + 1] == matricula)
-			{
-				return 1;
-			}
-		}
-		else if (lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido + 1] == matricula)
-		{
-			lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
-			lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido + 1] = 0;
-			
-		}
-		else
-		{
-			printf("voce selecionou 2 horas porem o seu horario corresponde a somente 1 hora, sera cancelado apenas o seu horario.");
-			lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
+			return 1;
 		}
 	}
-	
+	else if (lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido + 1] == matricula)
+	{
+		lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
+		lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido + 1] = 0;
+		
+	}
+	else
+	{
+		printf("voce selecionou 2 horas porem o seu horario corresponde a somente 1 hora, sera cancelado apenas o seu horario.");
+		lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
+	}
+
+
 	printf("foi cancelado com sucesso.\n");
 
 	return 2;
