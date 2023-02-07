@@ -2,9 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-
-
-//Estrutura de Variaveis do tipo pessoa.
+// Estrutura de Variaveis do tipo pessoa.
 typedef struct
 {
 	int matricula;
@@ -13,7 +11,7 @@ typedef struct
 
 Pessoa lista_pessoas[50];
 int quantidade_pessoas = 0;
-//Estrutura de Variaveis do tipo Laboratorio.
+// Estrutura de Variaveis do tipo Laboratorio.
 typedef struct
 {
 	int laboratorio;
@@ -23,7 +21,7 @@ typedef struct
 // Gerando a variavel do tipo agendamento, Variavel Pessoa.
 Laboratorio lista_laboratorios[6]; // os laboratorios com sua quantidades lista_laboratorios[6] = 1 ao 5 laboratorios.
 
-//Função do tipo Pessoa , Feita para iniciar as matriculas e as Reservas
+// Função do tipo Pessoa , Feita para iniciar as matriculas e as Reservas
 Pessoa inicia_pessoa(int matricula)
 {
 	Pessoa p;
@@ -34,8 +32,7 @@ Pessoa inicia_pessoa(int matricula)
 	return p;
 }
 
-
-//Função do tipo Laboratorio, Feita para iniciar os Dias da semana e seus respctivos Horarios disponiveis pela matriz l.horarios[i][j]
+// Função do tipo Laboratorio, Feita para iniciar os Dias da semana e seus respctivos Horarios disponiveis pela matriz l.horarios[i][j]
 Laboratorio inicia_laboratorio(int laboratorio)
 {
 	Laboratorio l;
@@ -53,7 +50,7 @@ Laboratorio inicia_laboratorio(int laboratorio)
 	return l;
 }
 
-//Função para mostrar os lugares disponiveis
+// Função para mostrar os lugares disponiveis
 void visualiza_agendamentos()
 {
 	int i, j;
@@ -67,9 +64,9 @@ void visualiza_agendamentos()
 	}
 
 	printf("    ");
-	for ( i = 8; i < 23; i++)
+	for (i = 8; i < 23; i++)
 	{
-		printf("%02d:00 ",i);
+		printf("%02d:00 ", i);
 	}
 	printf("\n");
 	for (i = 0; i < 5; i++)
@@ -101,10 +98,10 @@ void visualiza_agendamentos()
 		}
 		printf("\n");
 	}
-	return ;
+	return;
 }
 
-//Função de agendar um Horario no laboratorio
+// Função de agendar um Horario no laboratorio
 int agendar(int matricula)
 {
 	// Escolha lab
@@ -115,7 +112,7 @@ int agendar(int matricula)
 	if (laboratorio_escolhido < 1 || laboratorio_escolhido > 5)
 	{
 		printf("Laboratorio invalido.");
-		return 0; 
+		return 0;
 	}
 
 	int dia_semana_escolhido;
@@ -125,7 +122,7 @@ int agendar(int matricula)
 	if (dia_semana_escolhido < 1 || dia_semana_escolhido > 5)
 	{
 		printf("Dia da semana invalido.");
-		return 0; 
+		return 0;
 	}
 
 	int horario_escolhido;
@@ -134,7 +131,7 @@ int agendar(int matricula)
 	if (horario_escolhido < 8 || horario_escolhido > 22)
 	{
 		printf("Horario invalido.");
-		return 0; 
+		return 0;
 	}
 
 	int quantidade_horas;
@@ -143,12 +140,12 @@ int agendar(int matricula)
 	if (quantidade_horas < 1 || quantidade_horas > 2)
 	{
 		printf("Quantidade de horas invalidas.");
-		return 0; 
+		return 0;
 	}
 	if (horario_escolhido == 21 && quantidade_horas == 2)
 	{
 		printf("Quantidade de horas execedida , por favo escolha 20 ou 21 para nao execeder o horario de funcionamento");
-		return 0; 
+		return 0;
 	}
 
 	if (lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] == 0)
@@ -170,21 +167,18 @@ int agendar(int matricula)
 
 	printf("foi reservado com sucesso.\n");
 
-	
-
 	return 1;
 }
 
-
-//Função de cancelamento um de Horario no laboratorio
+// Função de cancelamento um de Horario no laboratorio
 int cancelar(int matricula)
 {
-	
-/*
-	return 0; --> deu errado
-	return 1; --> deu certo , cancela só 1 reserva
-	return 2; --> deu certo cancela tudo
-*/
+
+	/*
+		return 0; --> deu errado
+		return 1; --> deu certo , cancela só 1 reserva
+		return 2; --> deu certo cancela tudo
+	*/
 
 	// Escolha lab
 	int laboratorio_escolhido;
@@ -194,7 +188,7 @@ int cancelar(int matricula)
 	if (laboratorio_escolhido < 1 || laboratorio_escolhido > 5)
 	{
 		printf("Laboratorio invalido.");
-		return 0; 
+		return 0;
 	}
 
 	int dia_semana_escolhido;
@@ -204,7 +198,7 @@ int cancelar(int matricula)
 	if (dia_semana_escolhido < 1 || dia_semana_escolhido > 5)
 	{
 		printf("Dia da semana invalido.");
-		return 0; 
+		return 0;
 	}
 
 	int horario_escolhido;
@@ -213,7 +207,7 @@ int cancelar(int matricula)
 	if (horario_escolhido < 8 || horario_escolhido > 22)
 	{
 		printf("Horario invalido.");
-		return 0; 
+		return 0;
 	}
 
 	int quantidade_horas;
@@ -222,26 +216,25 @@ int cancelar(int matricula)
 	if (quantidade_horas < 1 || quantidade_horas > 2)
 	{
 		printf("Quantidade de horas invalidas.");
-		return 0; 
+		return 0;
 	}
 	if (horario_escolhido == 21 && quantidade_horas == 2)
 	{
 		printf("Quantidade de horas execedida , por favo escolha 20 ou 21 para nao execeder o horario de funcionamento");
-		return 0; 
+		return 0;
 	}
 
 	if (lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] == 0)
 	{
 		printf("Esse horario ja esta vago.");
-		return 0;	
+		return 0;
 	}
 	if (lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] != matricula)
 	{
 		printf("O horario selecionado foi reservado por outra matricula, nao e possivel cancelar.");
 		return 0;
 	}
-	
-	
+
 	if (quantidade_horas == 1)
 	{
 		lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
@@ -254,7 +247,6 @@ int cancelar(int matricula)
 	{
 		lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
 		lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido + 1] = 0;
-		
 	}
 	else
 	{
@@ -262,41 +254,29 @@ int cancelar(int matricula)
 		lista_laboratorios[laboratorio_escolhido].horarios[dia_semana_escolhido][horario_escolhido] = 0;
 	}
 
-
 	printf("foi cancelado com sucesso.\n");
 
 	return 2;
 }
 
-
-
-
-
 int busca_pessoa(int matricula)
 {
-    
-    for (int i = 0; i < quantidade_pessoas; i++)
-    {
-        if (lista_pessoas[i].matricula == matricula)
-        {
-            printf("A matricula %d se encontra na posicao %d\n", matricula, i);
-            return i;
-        }else
-        {
-            printf("A matricula nao existe no vetor");
-        }
-    }
-    return -1;
+
+	for (int i = 0; i < quantidade_pessoas; i++)
+	{
+		if (lista_pessoas[i].matricula == matricula)
+		{
+			return i;
+		}
+	}
+	return -1;
 }
 
-
-//Principal
+// Principal
 int main()
 {
-	//Variavel de decisão do Menu:
-	int opcao = 1 , i = 0;
-
-	
+	// Variavel de decisão do Menu:
+	int opcao = 1, i = 0;
 
 	lista_laboratorios[1] = inicia_laboratorio(1);
 	lista_laboratorios[2] = inicia_laboratorio(2);
@@ -305,18 +285,17 @@ int main()
 	lista_laboratorios[5] = inicia_laboratorio(5);
 
 	Pessoa pessoa;
-	
-	
+
 	// Leitura dos dados:
 	do
 	{
 		int matricula, sucesso;
 		printf("Digite sua matricula: ");
 		scanf("%d", &matricula);
-		
+
 		int posicao = busca_pessoa(matricula);
 
-		if(posicao == -1)
+		if (posicao == -1)
 		{
 			pessoa = inicia_pessoa(matricula);
 			lista_pessoas[quantidade_pessoas] = pessoa;
@@ -327,37 +306,37 @@ int main()
 			pessoa = lista_pessoas[posicao];
 		}
 
-		if(pessoa.reservas == 3)
+		if (pessoa.reservas == 3)
 		{
 			printf("Numero de reservas maximo permitidos");
 		}
 
-		printf("O que deseja fazer hoje:\n [1] - Agendar uma Reserva\n [2] - Cancelar uma Reserva\n [3] - Vizualizar agendamentos\n [0] - Para finalizar o programa");
-		scanf("%d",&opcao);
+		printf("O que deseja fazer hoje:\n [1] - Agendar uma Reserva\n [2] - Cancelar uma Reserva\n [3] - Vizualizar agendamentos\n [0] - Para finalizar o programa\n: ");
+		scanf("%d", &opcao);
 		switch (opcao)
 		{
-			case 0:
-				break;
-			case 1:
-				sucesso = agendar(matricula);
-				if (sucesso == 1)
-				{
-					pessoa.reservas++;
-				}
-				break;
-			case 2:
-				sucesso = cancelar(matricula);
-				if (sucesso == 2)
-				{
-					pessoa.reservas--;
-				}
-				break;
-			case 3:
-				visualiza_agendamentos();
-				break;
+		case 0:
+			break;
+		case 1:
+			sucesso = agendar(matricula);
+			if (sucesso == 1)
+			{
+				pessoa.reservas++;
+			}
+			break;
+		case 2:
+			sucesso = cancelar(matricula);
+			if (sucesso == 2)
+			{
+				pessoa.reservas--;
+			}
+			break;
+		case 3:
+			visualiza_agendamentos();
+			break;
 
-			default:
-				break;
+		default:
+			break;
 		}
 
 	} while (opcao != 0);
