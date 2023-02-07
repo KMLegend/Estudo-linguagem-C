@@ -69,23 +69,23 @@ void visualiza_agendamentos()
 		printf("%02d:00 ", i);
 	}
 	printf("\n");
-	for (i = 0; i < 5; i++)
+	for (i = 1; i < 6; i++)
 	{
 		switch (i)
 		{
-		case 0:
+		case 1:
 			printf("SEG ");
 			break;
-		case 1:
+		case 2:
 			printf("TER ");
 			break;
-		case 2:
+		case 3:
 			printf("QUA ");
 			break;
-		case 3:
+		case 4:
 			printf("QUI ");
 			break;
-		case 4:
+		case 5:
 			printf("SEX ");
 			break;
 		default:
