@@ -259,10 +259,10 @@ int cancelar(int matricula)
 	return 2;
 }
 
-int busca_pessoa(int matricula)
+int busca_pessoa(int matricula, int i)
 {
 
-	for (int i = 0; i < quantidade_pessoas; i++)
+	for (i = 0; i < quantidade_pessoas; i++)
 	{
 		if (lista_pessoas[i].matricula == matricula)
 		{
@@ -293,12 +293,13 @@ int main()
 		printf("Digite sua matricula: ");
 		scanf("%d", &matricula);
 
-		int posicao = busca_pessoa(matricula);
-
+		int posicao = busca_pessoa(matricula, i);
+		printf("\n%d\n", posicao);
 		if (posicao == -1)
 		{
 			pessoa = inicia_pessoa(matricula);
 			lista_pessoas[quantidade_pessoas] = pessoa;
+			printf("\n%d\n",pessoa);
 			quantidade_pessoas++;
 		}
 		else
